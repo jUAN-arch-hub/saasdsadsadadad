@@ -1,0 +1,329 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local MainWindow = Rayfield:CreateWindow({
+    Name = "Mini Fucker",
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "by Falxe",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "Mini Fucker Hub"
+    },
+    Discord = {
+        Enabled = false,
+        Invite = "noinvitelink",
+        RememberJoins = true
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Mini Fucker Hub",
+        Subtitle = "Key System",
+        Note = "Key: MiniFucker",
+        FileName = "MiniFuckerKey",
+        SaveKey = true,
+        GrabKeyFromSite = false,
+        Key = "MiniFucker"
+    }
+})
+
+-- Adicionando abas
+local LocaisTab = MainWindow:CreateTab("Locais", "rbxassetid://1234567891")
+local AutoFarmsTab = MainWindow:CreateTab("Auto Farms", "rbxassetid://1234567892")
+local PlayerTab = MainWindow:CreateTab("Player", "rbxassetid://1234567893")
+local VisualTab = MainWindow:CreateTab("Visual", "rbxassetid://1234567894")
+local MiscTab = MainWindow:CreateTab("Misc", "rbxassetid://1234567895")
+local VeiculosTab = MainWindow:CreateTab("Veículos", "rbxassetid://1234567896")
+
+-- Adicionando botões na aba Locais
+LocaisTab:CreateButton({
+    Name = "Teleportar para Spawn",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.86671257019043, 4.1360039710998535, 155.97259521484375)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Estacionamento",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(37, 3.7635159492492676, -43)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Fazenda",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-741, 40.63622283935547, 2819)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Mecânica",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-337, 3.7887420654296875, -308)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Gari",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-337, 3.7887420654296875, -308)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Mineração",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-532, 3.246159553527832, 726)
+    end,
+})
+
+LocaisTab:CreateButton({
+    Name = "Teleportar para Hospital",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-532, 3.246159553527832, 726)
+    end,
+})
+
+-- Adicionando botões na aba Auto Farms
+AutoFarmsTab:CreateButton({
+    Name = "Farmar Banco Manual",
+    Callback = function()
+        local player = game.Players.LocalPlayer
+        
+        -- Teleportar para o local inicial
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(49.0938835144043, 6.165478706359863, 650.8202514648438)
+        
+        -- Esperar 2 minutos
+        wait(120)
+        
+        -- Teleportar para o próximo local
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(1540.9566650390625, -19.21813201904297, -2555.7119140625)
+        
+        -- Executar o script de lavagem
+        local args = {
+            [1] = "LavagemFeita"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("pergunta"):FireServer(unpack(args))
+        
+        -- Retornar para a posição inicial
+        player.Character.HumanoidRootPart.CFrame = CFrame.new(-29.722684860229492, 4.101985454559326, 149.36996459960938)
+        
+        -- Começar o autofarm automaticamente
+        -- Adicione o script de autofarm aqui se necessário
+    end,
+})
+
+-- Adicionando botões na aba Misc
+MiscTab:CreateButton({
+    Name = "Virar Mecânico",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Mecanico"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+MiscTab:CreateButton({
+    Name = "Virar Pescador",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Pescador"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+MiscTab:CreateButton({
+    Name = "Virar Fazendeiro",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Fazendeiro"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+MiscTab:CreateButton({
+    Name = "Virar Frentista",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Frentista"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+MiscTab:CreateButton({
+    Name = "Virar Entregador de Gás",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Entregador de Gás"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+MiscTab:CreateButton({
+    Name = "Virar Gari",
+    Callback = function()
+        local args = {
+            [1] = "trabalhosTimes",
+            [2] = {
+                [1] = "Gari"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+-- Adicionando botões na aba Player
+PlayerTab:CreateButton({
+    Name = "ESP",
+    Callback = function()
+        -- Adicione o script ESP aqui
+        local espScript = [[
+            -- Insira o código ESP aqui
+            local esp = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+            esp.Name = "ESP"
+            
+            local espScript = Instance.new("LocalScript", esp)
+            espScript.Source = [[
+                local Players = game:GetService("Players")
+                local function onCharacterAdded(character)
+                    if character then
+                        -- Adicione o código ESP aqui
+                    end
+                end
+                
+                Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+                if Players.LocalPlayer.Character then
+                    onCharacterAdded(Players.LocalPlayer.Character)
+                end
+            ]]
+        ]]
+        loadstring(espScript)()
+    end,
+})
+
+PlayerTab:CreateButton({
+    Name = "Aimbot",
+    Callback = function()
+        -- Adicione o script Aimbot aqui
+        local aimbotScript = [[
+            -- Insira o código Aimbot aqui
+            local aimbot = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+            aimbot.Name = "Aimbot"
+            
+            local aimbotScript = Instance.new("LocalScript", aimbot)
+            aimbotScript.Source = [[
+                -- Adicione o código Aimbot aqui
+            ]]
+        ]]
+        loadstring(aimbotScript)()
+    end,
+})
+
+-- Adicionando botões na aba Visual
+VisualTab:CreateButton({
+    Name = "Pegar Kit Mecânico",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "Kit Mecânico"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+VisualTab:CreateButton({
+    Name = "Comprar Água",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "Água"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+VisualTab:CreateButton({
+    Name = "Comprar Hambúrguer",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "Hambúrguer"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+VisualTab:CreateButton({
+    Name = "Comprar iPhone 14",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "iPhone 14"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+VisualTab:CreateButton({
+    Name = "Matar Fome e Sede",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "MatarFomeSede"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+VisualTab:CreateButton({
+    Name = "Pegar Gasolina",
+    Callback = function()
+        local args = {
+            [1] = "mercadinhow",
+            [2] = {
+                [1] = "Gasolina"
+            }
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteNovos"):WaitForChild("mercadinmote"):FireServer(unpack(args))
+    end,
+})
+
+-- Adicionando botões na aba Veículos
+VeiculosTab:CreateButton({
+    Name = "Menu Carros",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/jUAN-arch-hub/Mini_bosta/main/Mini_bosta_carros'))()
+    end,
+})
+
+print("Mini Fucker Hub configurado com sucesso!")
